@@ -20,6 +20,13 @@ RUN ./alfresco-community-5.0.b-installer-linux-x64.bin \
 	--alfresco_admin_password AlfrescoAdmin
 
 EXPOSE 80
+EXPOSE 21
+EXPOSE 139
+EXPOSE 445
+EXPOSE 7070
+EXPOSE 8009
+EXPOSE 8080
+EXPOSE 8443
 
 CMD service alfresco start && /bin/sh -c "while true;do sleep 1;done"
 
