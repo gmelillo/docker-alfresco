@@ -19,11 +19,7 @@ RUN ./alfresco-community-5.0.b-installer-linux-x64.bin \
 	--baseunixservice_install_as_service 1 \
 	--alfresco_admin_password AlfrescoAdmin
 
-RUN apt-get install openssh-server
-
-RUN service alfresco start
-
 EXPOSE 80
 
-CMD service ssh stop && service alfresco start
+CMD service alfresco start && /bin/sh -c "while true;do sleep 1;done"
 

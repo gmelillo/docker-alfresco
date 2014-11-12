@@ -11,5 +11,5 @@ Latest Alfresco Community Edition
 
 The root user will be generated automatically and prompted on `docker logs <instanceid>`.
 
-The first administrative user is **ocadmin** with password `stachaswac`
+The first administrative user is **admin** with password `AlfrescoAdmin`
 
