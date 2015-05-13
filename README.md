@@ -1,6 +1,6 @@
 #docker-alfresco
 
-Latest Alfresco Community Edition
+Latest Alfresco Community Edition 5.0.0 (d r99759-b2)
 
 ##Basic Setup
 

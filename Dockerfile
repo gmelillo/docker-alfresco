@@ -10,7 +10,7 @@ RUN dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt-get -y install openjdk-7-jdk wget
 
 RUN wget -O alfresco-community-5.0.b-installer-linux-x64.bin \
-	http://dl.alfresco.com/release/community/5.0.b-build-00092/alfresco-community-5.0.b-installer-linux-x64.bin
+	http://dl.alfresco.com/release/community/5.0.d-build-00002/alfresco-community-5.0.d-installer-linux-x64.bin
 RUN chmod +x alfresco-community-5.0.b-installer-linux-x64.bin
 
 RUN ./alfresco-community-5.0.b-installer-linux-x64.bin \
