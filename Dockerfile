@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 MAINTAINER Gabriel Melillo "gabriel@melillo.me"
 
 RUN apt-get update && apt-get -y upgrade
