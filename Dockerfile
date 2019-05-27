@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER Gabriel Melillo "gabriel@melillo.me"
 
-RUN apt-get update && apt-get -y upgrade
+RUN apt-get update && apt-get -y upgrade && apt-get install locales
 RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
 
 RUN echo "Europe/Berlin" > /etc/timezone
