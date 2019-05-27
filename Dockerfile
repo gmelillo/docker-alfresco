@@ -1,13 +1,11 @@
 FROM ubuntu:18.04
-MAINTAINER Gabriel Melillo "gabriel@melillo.me"
+LABEL maintainer="gabriel@melillo.me"
 
-RUN apt-get update && apt-get -y upgrade && apt-get install locales
-RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
-
-RUN echo "Europe/Berlin" > /etc/timezone
-RUN dpkg-reconfigure --frontend noninteractive tzdata
-
-RUN apt-get -y install openjdk-7-jdk wget
+RUN apt-get update && apt-get -y upgrade && \
+	apt-get -y install openjdk-8-jdk wget locales tzdata && \
+	locale-gen en_US.UTF-8 && dpkg-reconfigure locales tzdata && \
+	echo "Europe/Berlin" > /etc/timezone && \
+	dpkg-reconfigure --frontend noninteractive tzdata
 
 RUN wget -O alfresco-community-5.0.b-installer-linux-x64.bin \
 	http://dl.alfresco.com/release/community/5.0.d-build-00002/alfresco-community-5.0.d-installer-linux-x64.bin
