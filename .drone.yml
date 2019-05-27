@@ -1,0 +1,17 @@
+kind: pipeline
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+
+pipeline:
+  test_build:
+    image: docker:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+    - docker build -t gmelillo/docker-alfresco:test .
+    when:
+      event:
+      - pull_request
