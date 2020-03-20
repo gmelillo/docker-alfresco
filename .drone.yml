@@ -6,13 +6,23 @@ platform:
   os: linux
   arch: amd64
 
-pipeline:
-  test_build:
-    image: docker:latest
-    volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-    commands:
-    - docker build -t gmelillo/docker-alfresco:test .
-    when:
-      event:
-      - pull_request
+steps:
+- name: docker
+  pull: default
+  image: plugins/docker
+  settings:
+    debug: true
+    registry: registry.melillo.me
+    repo: registry.melillo.me/smsgw
+    tags:
+    - latest
+    - "${DRONE_COMMIT_SHA:8}"
+  environment:
+    DOCKER_LAUNCH_DEBUG: true
+    DOCKER_PASSWORD:
+      from_secret: docker_password
+    DOCKER_USERNAME:
+      from_secret: docker_username
+  when:
+    event:
+    - pull_request
