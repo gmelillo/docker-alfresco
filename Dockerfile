@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:20.10
 MAINTAINER Gabriel Melillo "gabriel@melillo.me"
 
 RUN apt-get update && apt-get -y upgrade && apt-get install locales
