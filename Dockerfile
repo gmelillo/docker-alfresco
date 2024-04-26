@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:24.04
 MAINTAINER Gabriel Melillo "gabriel@melillo.me"
 
 RUN apt-get update && apt-get -y upgrade && apt-get install locales
